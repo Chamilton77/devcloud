@@ -1,0 +1,12 @@
+
+<a href="/create_post">Make a post</a>
+<% @posts.each do |post| %>
+	<div>
+		<%= post.user.fname %>
+		<%= post.content %>
+		<br>
+		<a href="/editpost/<%= post.id %>">Edit post</a> |
+		<a href="/deletepost/<%= post.id %>">Delete post</a>
+	</div>
+<% end %>
+

@@ -1,0 +1,25 @@
+<div class="profilepage">
+	<img src="<%= url("images/heeps.jpg") %>">
+	<div class="summary">
+		<br>
+		<%= @user.fname %> <%= @user.lname %>
+		<br>
+		<%= @user.email %>
+		<br>
+		<%= @user.language %>
+		<br>
+		<%= @user.experience %> 
+	</div>
+</div>
+<div class="profileposts">
+	<% @posts.each do |post| %>
+	<div>
+		<%= post.user.fname %>
+		<%= post.content %>
+		<br>
+		<a href="/editpost/<%= post.id %>" value="edit">Edit post</a> |
+		<a href="/deletepost/<%= post.id %>" value="delete">Delete post</a>
+	</div>
+<% end %>
+</div>
+
