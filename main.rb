@@ -8,7 +8,7 @@ configure(:development) do
     set :database, "sqlite3:blog.sqlite3" 
 end
 configure(:production) do   
-    set :database, {adapter: 'postgresql',  encoding: 'unicode', database: 'blog_production', pool: 5, username: 'devcloud', password: ENV["DEVCLOUD_PASSWORD"]} 
+    set :database, {adapter: 'postgresql',  encoding: 'unicode', database: 'devcloud_production', pool: 5, username: 'devcloud', password: (ENV["DEVCLOUD_PASSWORD"])} 
 end
 require './models'
 # finds the user id of the current user so we can use the current user method
